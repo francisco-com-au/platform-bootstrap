@@ -23,7 +23,7 @@ echo "ARGOCD FORWARD PORT PID: $PORT_FORWARD_PID"
 
 # Update admin password
 export PASS=$(kubectl -n argocd get secret argocd-initial-admin-secret --output=jsonpath="{.data.password}" | base64 --decode)
-argocd login --insecure --username admin --password $PASS --grpc-web localhost:$PORT
+argocd login --insecure --plaintext --username admin --password $PASS --grpc-web localhost:$PORT
 argocd account update-password --current-password $PASS --new-password $PASSWORD
 
 # Initialise projects and apps
