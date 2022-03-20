@@ -10,7 +10,7 @@ metadata:
 spec:
   project: bootstrap
   source:
-    repoURL: https://github.com/francisco-com-au/platform-bootstral.git
+    repoURL: https://github.com/francisco-com-au/platform-bootstrap.git
     targetRevision: main
     path: cluster/argocd-apps
     directory:
