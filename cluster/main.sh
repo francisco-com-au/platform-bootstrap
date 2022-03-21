@@ -8,7 +8,7 @@ set -e
 # Create cluster
 #  This will spin up a minikube cluster. Disable it if you want to use a
 #  different distribution such as Rancher Desktop.
-# ./cluster.sh
+./cluster.sh
 
 # Install argocd
 ./argocd.sh
