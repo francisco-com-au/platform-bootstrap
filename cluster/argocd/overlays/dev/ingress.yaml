@@ -1,0 +1,19 @@
+---
+# argocd external
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  rules:
+  - host: argocd.dev.francisco.com.au
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443

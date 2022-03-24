@@ -2,6 +2,8 @@
 
 set -e
 
+ENVIRONMENT=$1
+
 PASSWORD=adminadmin
 PORT=9999
 
@@ -10,7 +12,8 @@ brew install kustomize
 
 # Install Argo CD on the cluster
 kubectl create namespace argocd
-kustomize build ./argocd | kubectl -n argocd apply -f -
+kubectl apply -k ./argocd/overlays/$ENVIRONMENT
+# kustomize build ./argocd | kubectl -n argocd apply -f -
 
 # Install Argo CD CLI
 brew install argocd
