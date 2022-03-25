@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/francisco-com-au/platform-ops.git
     targetRevision: main
-    path: argocd-apps
+    path: argocd-apps/overlays/prod
     # directory:
     #   recurse: true
   destination:
