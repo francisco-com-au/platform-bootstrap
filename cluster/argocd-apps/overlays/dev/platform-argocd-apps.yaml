@@ -7,3 +7,5 @@ spec:
   project: bootstrap
   source:
     targetRevision: develop
+    path: argocd-apps/overlays/dev
+
