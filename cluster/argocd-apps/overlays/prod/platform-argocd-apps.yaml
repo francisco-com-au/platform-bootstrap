@@ -1,0 +1,10 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: platform-argocd-apps
+  namespace: argocd
+spec:
+  project: bootstrap
+  source:
+    targetRevision: main
+    path: argocd-apps/overlays/prod
