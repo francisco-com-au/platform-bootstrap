@@ -6,6 +6,7 @@ metadata:
   name: argocd
   namespace: argocd
 spec:
+  ingressClassName: nginx
   rules:
   - host: argocd.francisco.com.au
     http:

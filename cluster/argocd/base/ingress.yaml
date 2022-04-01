@@ -1,25 +1,3 @@
----
-# argocd external
-kind: Ingress
-apiVersion: networking.k8s.io/v1
-metadata:
-  name: argocd
-  namespace: argocd
-spec:
-  ingressClassName: nginx
-  rules:
-  - host: argocd.francisco.com.au
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: argocd-server
-            port:
-              number: 443
-
----
 # argocd internal. Point /etc/hosts to this ingress
 kind: Ingress
 apiVersion: networking.k8s.io/v1
