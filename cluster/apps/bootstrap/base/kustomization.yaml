@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - ./bootstrap-namespace.yaml
 - ./bootstrap-project.yaml
-- ./platform-ops-apps.yaml
+# - ./platform-ops-apps.yaml
