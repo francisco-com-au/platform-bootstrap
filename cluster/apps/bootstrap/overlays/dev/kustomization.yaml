@@ -4,4 +4,4 @@ resources:
 - ../../base
 
 patchesStrategicMerge:
-- ./platform-ops.yaml
+- ./platform-ops-apps.yaml
