@@ -16,7 +16,7 @@ spec:
     metadata:
       name: '{{path.basename}}'
     spec:
-      project: bootstrap
+      project: platform-ops
       source:
         repoURL: https://github.com/francisco-com-au/platform-ops.git
         targetRevision: main
