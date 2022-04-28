@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: platform-argocd-apps
+  name: platform-ops-apps
   namespace: argocd
   # finalizers:
   #   - resources-finalizer.argocd.argoproj.io
@@ -11,7 +11,7 @@ spec:
       repoURL: https://github.com/francisco-com-au/platform-ops.git
       revision: main
       directories:
-      - path: 'argocd-apps/*'
+      - path: 'apps/*'
   template:
     metadata:
       name: '{{path.basename}}'

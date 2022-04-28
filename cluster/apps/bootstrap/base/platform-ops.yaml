@@ -1,14 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: platform-ops
+  name: platform-ops-apps
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: bootstrap
   source:
     repoURL: https://github.com/francisco-com-au/platform-bootstrap
     targetRevision: HEAD
-    path: cluster/apps/platform-ops/overlays/prod
+    path: cluster/apps/platform-ops-apps/overlays/prod
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
