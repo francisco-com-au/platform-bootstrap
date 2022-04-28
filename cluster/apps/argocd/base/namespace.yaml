@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: platform-ops
+  namespace: argocd
+spec:
+  project: bootstrap
+  source:
+    repoURL: https://github.com/francisco-com-au/platform-ops
+    targetRevision: HEAD
+    path: crossplane/xrd/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: crossplane-system
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true

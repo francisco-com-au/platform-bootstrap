@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: platform-ops
+  namespace: argocd
+spec:
+  project: bootstrap
+  source:
+    repoURL: https://github.com/francisco-com-au/platform-bootstrap
+    targetRevision: HEAD
+    path: cluster/apps/platform-ops/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true

@@ -3,8 +3,9 @@ kind: ApplicationSet
 metadata:
   name: platform-argocd-apps
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  # finalizers:
+  #   - resources-finalizer.argocd.argoproj.io
+spec:
   generators:
   - git:
       repoURL: https://github.com/francisco-com-au/platform-ops.git
@@ -12,11 +13,23 @@ metadata:
       directories:
       - path: 'argocd-apps/*'
   template:
+    metadata:
+      name: '{{path.basename}}'
     spec:
+      project: bootstrap
       source:
+        repoURL: https://github.com/francisco-com-au/platform-ops.git
         targetRevision: main
-        path: '{{path.basename}}/overlays/dev'
-
+        path: '{{path.basename}}/overlays/prod'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
+        syncOptions:
+        - CreateNamespace=true
 # ---
 # # Bootstrap App. Looks after itself
 # apiVersion: argoproj.io/v1alpha1
