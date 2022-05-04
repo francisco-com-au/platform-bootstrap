@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - ./bootstrap-namespace.yaml
 - ./bootstrap-project.yaml
-- ./platform-argocd-apps.yaml
+- ./platform-ops-apps.yaml

@@ -12,7 +12,7 @@ brew install kustomize
 
 # Install Argo CD on the cluster
 kubectl create namespace argocd
-kubectl -n argocd apply -k ./argocd/overlays/$ENVIRONMENT
+kubectl -n argocd apply -k ./apps/argocd/overlays/$ENVIRONMENT
 
 # Install Argo CD CLI
 brew install argocd
@@ -29,7 +29,7 @@ argocd login --insecure --plaintext --username admin --password $PASS --grpc-web
 argocd account update-password --current-password $PASS --new-password $PASSWORD
 
 # Initialise projects and apps
-kubectl apply -k argocd-apps/overlays/$ENVIRONMENT
+kubectl apply -k ./apps/bootstrap/overlays/$ENVIRONMENT
 
 # Stop port forwarding
 kill $PORT_FORWARD_PID
