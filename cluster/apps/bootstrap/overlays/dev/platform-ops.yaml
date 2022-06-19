@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: platform-ops-foundations
+  name: platform-ops
   namespace: argocd
 spec:
   project: bootstrap
   source:
     targetRevision: develop
-    path: cluster/apps/platform-ops-foundations/overlays/dev
+    path: cluster/apps/platform-opps/overlays/dev

@@ -6,5 +6,5 @@ metadata:
 spec:
   project: bootstrap
   source:
-    targetRevision: develop
-    path: cluster/apps/platform-ops-apps/overlays/dev
+    targetRevision: main
+    path: cluster/apps/platform-ops/overlays/prod
