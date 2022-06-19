@@ -7,4 +7,5 @@ resources:
 - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 patchesStrategicMerge:
-  - ./argocd-server.yaml
+  - ./patches/argocd-server.yaml
+  - ./patches/argocd-cm.yaml

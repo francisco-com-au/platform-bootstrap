@@ -5,3 +5,4 @@ resources:
 
 patchesStrategicMerge:
 - ./platform-ops-apps.yaml
+- ./platform-ops-foundations.yaml
