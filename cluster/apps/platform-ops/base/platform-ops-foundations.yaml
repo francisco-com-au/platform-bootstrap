@@ -21,11 +21,11 @@ spec:
         repoURL: https://github.com/francisco-com-au/platform-ops.git
         targetRevision: main
         path: '{{path.basename}}/overlays/prod'
+        plugin:
+          name: kustomize-helm
       destination:
         server: https://kubernetes.default.svc
         namespace: argocd
-      plugin:
-        name: kustomize-helm
       syncPolicy:
         automated:
           selfHeal: true
