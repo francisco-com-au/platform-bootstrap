@@ -7,4 +7,4 @@ spec:
   project: bootstrap
   source:
     targetRevision: develop
-    path: cluster/apps/platform-opps/overlays/dev
+    path: cluster/apps/platform-ops/overlays/dev
