@@ -41,4 +41,5 @@ argocd account update-password --current-password $PASS --new-password $PASSWORD
 # kill $PORT_FORWARD_PID
 # argocd login --insecure --plaintext --username admin --password $PASS --grpc-web localhost:$PORT
 
-
+# Install Crossplane providers
+# kubectl crossplane install provider crossplane/provider-jet-gcp:v0.2.0

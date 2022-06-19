@@ -23,3 +23,6 @@ fi
 
 # Install argocd
 ./argocd.sh $ENVIRONMENT
+
+# Mount secrets
+./mount_secrets.sh
