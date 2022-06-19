@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: platform-ops-foundations
+  namespace: argocd
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/francisco-com-au/platform-ops.git
+      revision: develop
+      directories:
+      - path: 'foundations/*'
+  template:
+    spec:
+      source:
+        targetRevision: develop
+        path: '{{path}}/overlays/dev'
